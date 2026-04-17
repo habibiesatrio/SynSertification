@@ -16,11 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 </head>
 <body <?php body_class( 'dem-login-body' ); ?>>
 
-    <a href="<?php echo home_url( '/sertifikasi-login/' ); ?>" class="dem-back-to-home">
-        <i data-lucide="arrow-left" style="margin-right: 8px; width: 18px;"></i> Kembali ke Login
-    </a>
-
     <div class="dem-login-container">
+        <a href="<?php echo home_url( '/sertifikasi-login/' ); ?>" class="dem-back-to-home">
+            <i data-lucide="arrow-left" style="margin-right: 8px; width: 16px;"></i> Kembali ke Login
+        </a>
+
         <div class="dem-login-card">
             <div class="dem-login-header">
                 <img src="<?php echo DEM_SERTIFICATION_URL; ?>assets/images/logo.png" alt="DEM Indonesia Logo"

@@ -22,26 +22,43 @@ body.dem-login-body {
 }
 
 .dem-back-to-home {
-    position: absolute;
-    top: 30px;
-    left: 30px;
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
     color: var(--text-muted);
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 10px 15px;
-    background: var(--card-bg);
-    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--card-border);
-    backdrop-filter: blur(10px);
 }
 
 .dem-back-to-home:hover {
     color: white;
-    transform: translateX(-5px);
     background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-3px);
+}
+
+.dem-login-body {
+    background: var(--background-gradient);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-main);
+}
+
+.dem-login-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .dem-login-card {
@@ -51,8 +68,6 @@ body.dem-login-body {
     border-radius: 24px;
     border: 1px solid var(--card-border);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    max-width: 450px;
     position: relative;
     overflow: hidden;
 }
