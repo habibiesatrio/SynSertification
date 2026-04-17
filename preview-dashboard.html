@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Dashboard | DEM Indonesia Sertification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+         :root {
+            --primary-color: #0056b3;
+            --secondary-color: #6c757d;
+            --background-color: #f4f7f6;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --border-color: #dddddd;
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--background-color);
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .dashboard-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .back-link {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+        
+        h1 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        h2 {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th {
+            background: rgba(255, 255, 255, 0.05);
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .dem-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        
+        .logout-link {
+            color: #f87171;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 30px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body style="background: #0f172a; display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+
+    <div class="dashboard-container">
+        <a href="preview-landing.html" class="back-link" style="color: #94a3b8; text-decoration: none; margin-bottom: 20px; display: flex; align-items: center;">
+            <i data-lucide="arrow-left" style="margin-right: 8px; width: 18px;"></i> Kembali ke Beranda
+        </a>
+
+        <div class="dashboard-card">
+            <h1>Selamat Datang, John Doe!</h1>
+            <p>Anda telah berhasil masuk ke Portal Sertifikasi DEM Indonesia.</p>
+
+            <h2>Sertifikat Anda</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sertifikat</th>
+                        <th>Nomor</th>
+                        <th>Berlaku Hingga</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sertifikasi Energi Terbarukan Level 1</td>
+                        <td>DEM/2026/001</td>
+                        <td>2027-04-17</td>
+                        <td><a href="#" class="dem-btn">Lihat Detail</a></td>
+                    </tr>
+                    <tr>
+                        <td>Workshop Efisiensi Industri</td>
+                        <td>DEM/2026/005</td>
+                        <td>2028-01-10</td>
+                        <td><a href="#" class="dem-btn">Lihat Detail</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a href="preview-login.html" class="logout-link">Keluar</a>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

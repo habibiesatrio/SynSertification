@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Landing Page | DEM Indonesia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+         :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-dark: #0f172a;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --text-bright: #ffffff;
+            --text-dim: #94a3b8;
+        }
+        
+        body {
+            background-color: var(--bg-dark);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-bright);
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header & Navbar */
+        
+        .dem-landing-header {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .dem-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .dem-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .dem-logo-placeholder {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 0 20px var(--primary);
+        }
+        
+        .dem-brand {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        /* Buttons */
+        
+        .dem-btn {
+            padding: 16px 32px;
+            border-radius: 16px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .dem-btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
+        }
+        
+        .dem-btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 30px -5px rgba(37, 99, 235, 0.5);
+        }
+        
+        .dem-btn-outline {
+            border: 1px solid var(--border);
+            color: var(--text-bright);
+            background: var(--card-bg);
+        }
+        
+        .dem-btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        /* Hero Section */
+        
+        .dem-hero-section {
+            padding: 120px 0;
+            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1), transparent), radial-gradient(circle at bottom left, rgba(37, 99, 235, 0.05), transparent);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dem-hero-content h1 {
+            font-size: clamp(40px, 8vw, 72px);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(to bottom, #fff 30%, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .dem-hero-content p {
+            font-size: 20px;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+        
+        .dem-hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        /* Features Section */
+        
+        .dem-features-section {
+            padding: 80px 0;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--text-bright);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .dem-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            padding: 48px;
+            border-radius: 32px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: rgba(37, 99, 235, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+            display: block;
+            color: var(--primary);
+            filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.3));
+        }
+        /* Footer */
+        
+        .dem-landing-footer {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: var(--text-dim);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+        /* Stats Section */
+        
+        .dem-stats-section {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .dem-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 0;
+        }
+        
+        .stat-item p {
+            color: var(--text-dim);
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        /* Process Section */
+        
+        .dem-process-section {
+            padding: 100px 0;
+        }
+        
+        .dem-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .timeline-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            flex-shrink: 0;
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+        }
+        
+        .timeline-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 20px;
+            flex: 1;
+        }
+        
+        .timeline-content h3 {
+            margin-top: 0;
+            color: white;
+        }
+        /* Programs Section */
+        
+        .dem-programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .program-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .program-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary);
+        }
+        
+        .program-tag {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        /* FAQ Section */
+        
+        .dem-faq-section {
+            padding: 100px 0;
+        }
+        
+        .dem-faq-list {
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+        
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 15px;
+            padding: 24px;
+        }
+        
+        .faq-item h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            color: white;
+        }
+        
+        .faq-item p {
+            margin: 0;
+            color: var(--text-dim);
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body class="dem-landing-body">
+
+    <header class="dem-landing-header">
+        <div class="container">
+            <nav class="dem-navbar">
+                <div class="dem-logo-container">
+                    <div class="dem-logo-placeholder">DEM</div>
+                    <span class="dem-brand">DEM Indonesia</span>
+                </div>
+                <div class="dem-nav-links">
+                    <a href="preview-login.html" class="dem-btn dem-btn-outline">Login Portal</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="dem-hero-section">
+        <div class="container">
+            <div class="dem-hero-content">
+                <h1>Program Sertifikasi <br><span>DEM Indonesia</span></h1>
+                <p>Meningkatkan kompetensi dan profesionalisme di sektor energi untuk masa depan Indonesia yang lebih baik.</p>
+                <div class="dem-hero-btns">
+                    <a href="preview-login.html" class="dem-btn dem-btn-primary">Daftar Sekarang</a>
+                    <a href="#about" class="dem-btn dem-btn-secondary">Pelajari Lebih Lanjut</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="verify" class="dem-verify-section">
+        <div class="container">
+            <div class="dem-verify-card">
+                <h2>Verifikasi Sertifikat</h2>
+                <p>Masukkan nomor sertifikat Anda untuk memeriksa keabsahan.</p>
+                <form class="dem-verify-form" onsubmit="return false;">
+                    <input type="text" placeholder="Contoh: DEM/2026/001" required>
+                    <button type="submit" class="dem-btn dem-btn-primary">Cek Sekarang</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="dem-stats-section">
+        <div class="container">
+            <div class="dem-stats-grid">
+                <div class="stat-item">
+                    <h3>5.000+</h3>
+                    <p>Profesional Tersertifikasi</p>
+                </div>
+                <div class="stat-item">
+                    <h3>150+</h3>
+                    <p>Mitra Industri</p>
+                </div>
+                <div class="stat-item">
+                    <h3>12+</h3>
+                    <p>Program Spesialisasi</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Tingkat Kepuasan Alumni</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="dem-features-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mengapa Sertifikasi DEM?</h2>
+                <p>Kami memberikan standar kualifikasi terbaik untuk profesional di bidang energi.</p>
+            </div>
+            <div class="dem-features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i data-lucide="graduation-cap"></i></div>
+                    <h3>Kurikulum Standar</h3>
+                    <p>Materi sertifikasi disusun berdasarkan kebutuhan industri energi terbarukan terkini.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i data-lucide="award"></i></div>
+                    <h3>Pengakuan Nasional</h3>
+                    <p>Sertifikat yang diakui secara resmi oleh berbagai institusi energi di Indonesia.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i data-lucide="users"></i></div>
+                    <h3>Jaringan Luas</h3>
+                    <p>Bergabunglah dengan ekosistem profesional energi terbesar di Indonesia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="dem-process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Alur Sertifikasi</h2>
+                <p>Langkah mudah untuk mendapatkan pengakuan profesional Anda.</p>
+            </div>
+            <div class="dem-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3>Pendaftaran</h3>
+                        <p>Buat akun di portal sertifikasi dan lengkapi profil profesional Anda.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3>Pemilihan Program</h3>
+                        <p>Pilih skema sertifikasi yang sesuai dengan kompetensi dan bidang kerja Anda.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3>Pelatihan & Ujian</h3>
+                        <p>Ikuti sesi pelatihan intensif dan selesaikan ujian asesmen kompetensi.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3>Penerbitan Sertifikat</h3>
+                        <p>Dapatkan sertifikat digital dan fisik yang diakui secara nasional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs" class="dem-features-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Program Unggulan</h2>
+                <p>Berbagai pilihan spesialisasi untuk mengakselerasi karir Anda.</p>
+            </div>
+            <div class="dem-programs-grid">
+                <div class="program-card">
+                    <div class="program-tag">Paling Populer</div>
+                    <h3>Ahli Energi Terbarukan</h3>
+                    <p>Sertifikasi komprehensif untuk instalasi dan manajemen sistem PLTS, PLTA, dan PLTB.</p>
+                </div>
+                <div class="program-card">
+                    <div class="program-tag">Industri</div>
+                    <h3>Audit Energi Industri</h3>
+                    <p>Pelatihan dan sertifikasi untuk melakukan efisiensi energi pada sistem manufaktur.</p>
+                </div>
+                <div class="program-card">
+                    <div class="program-tag">Manajerial</div>
+                    <h3>Manajer Energi Madya</h3>
+                    <p>Kepemimpinan strategis dalam pengelolaan sumber daya energi perusahaan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="dem-faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pertanyaan Umum (FAQ)</h2>
+                <p>Segala hal yang perlu Anda ketahui tentang sertifikasi DEM Indonesia.</p>
+            </div>
+            <div class="dem-faq-list">
+                <div class="faq-item">
+                    <h3>Berapa lama masa berlaku sertifikat?</h3>
+                    <p>Rata-rata sertifikat berlaku selama 3 tahun dan dapat diperpanjang melalui proses resertifikasi.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Apakah sertifikasi ini diakui secara internasional?</h3>
+                    <p>Ya, kurikulum kami disesuaikan dengan standar internasional dan diakui oleh mitra kami di luar negeri.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Bagaimana jika saya gagal dalam ujian?</h3>
+                    <p>Peserta diberikan kesempatan untuk mengikuti ujian remedial sebanyak satu kali dalam periode 6 bulan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <footer class="dem-landing-footer">
+        <div class="container">
+            <p>&copy; 2026 DEM Indonesia. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

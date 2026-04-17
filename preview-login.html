@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Login | DEM Indonesia Sertification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+         :root {
+            --primary-color: #0056b3;
+            --secondary-color: #6c757d;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --background-color: #f4f7f6;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --border-color: #dddddd;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .dem-login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+        
+        .dem-login-card {
+            background: var(--card-background);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dem-login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .dem-logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        
+        .dem-login-header h1 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin: 0;
+            font-weight: 700;
+        }
+        
+        .dem-login-header p {
+            color: var(--secondary-color);
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+        
+        .dem-form-group {
+            margin-bottom: 20px;
+        }
+        
+        .dem-form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        
+        .dem-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        
+        .dem-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .dem-form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 13px;
+        }
+        
+        .dem-remember-me {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: var(--secondary-color);
+        }
+        
+        .dem-remember-me input {
+            margin-right: 8px;
+        }
+        
+        .dem-forgot-password {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .dem-forgot-password:hover {
+            text-decoration: underline;
+        }
+        
+        .dem-btn-login {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dem-btn-login:hover {
+            background-color: #004494;
+        }
+        
+        .dem-login-footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--secondary-color);
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body class="dem-login-body">
+
+    <a href="preview-landing.html" class="dem-back-to-home">
+        <i data-lucide="arrow-left" style="margin-right: 8px; width: 18px;"></i> Kembali ke Beranda
+    </a>
+
+    <div class="dem-login-container">
+        <div class="dem-login-card">
+            <div class="dem-login-header">
+                <div class="dem-logo-placeholder">DEM</div>
+                <h1>DEM Indonesia</h1>
+                <p>Sertification Portal</p>
+            </div>
+
+            <form class="dem-login-form" onsubmit="window.location.href='preview-dashboard.html'; return false;">
+                <div class="dem-form-group">
+                    <label for="user_login">Username atau Email</label>
+                    <input type="text" id="user_login" class="dem-input" placeholder="Masukkan username">
+                </div>
+
+                <div class="dem-form-group">
+                    <label for="user_pass">Password</label>
+                    <input type="password" id="user_pass" class="dem-input" placeholder="Masukkan password">
+                </div>
+
+                <div class="dem-form-options">
+                    <label class="dem-remember-me">
+                    <input type="checkbox"> Ingat Saya
+                </label>
+                    <a href="#" class="dem-forgot-password">Lupa Password?</a>
+                </div>
+
+                <button type="submit" class="dem-btn-login">MASUK</button>
+            </form>
+
+            <div class="dem-login-footer">
+                <p>Belum punya akun? <a href="preview-register.html" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">Daftar di sini</a></p>
+                <p style="margin-top: 20px;">&copy; 2026 DEM Indonesia. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
